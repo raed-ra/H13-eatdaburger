@@ -1,0 +1,49 @@
+
+  <iframe class="form-row" src="https://giphy.com/embed/xUOxf5PgfyxZ29dmNy" width="480" height="360" frameBorder="0" class="giphy-embed"
+    allowFullScreen></iframe>
+  {{!-- <p><a href="https://giphy.com/gifs/mcdonaldsczsk-food-mcdonalds-xUOxf5PgfyxZ29dmNy">via GIPHY</a></p> --}}
+ 
+    <h1 class="form-row">Burgers!</h1>
+
+
+
+<div class="row mobile">
+  {{!-- <div class="column"></div> --}}
+  <div class="column">
+    <h2>Burgers to devour!</h2>
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burger-block devour=true}}
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="column">
+    <h2>Burgers devoured!</h2>
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> burgers/burger-block devour=false}}
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+  {{!-- <div class="column"></div> --}}
+</div>
+
+
+<form class="create-form">
+  <h2>Add burger/s</h2>
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+  <div class="form-group">
+ 
+    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="devoured" value="0"> Available to eat
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>

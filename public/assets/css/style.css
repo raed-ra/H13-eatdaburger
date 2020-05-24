@@ -1,0 +1,77 @@
+
+/* .form-row {
+  display: flex;
+  justify-content: center;
+} */
+
+body {
+  background-color: gold;
+  color: red;
+  text-align: center;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+li {
+  padding: 5px;
+  margin: 5px;
+  background: gold;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.main-container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+h1 {
+  color: 007cae;
+  font-weight: 200;
+  font-size: 50px;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+
+.row {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.column .mobile {
+  flex: 1;7
+  justify-content: space-evenly; */
+  font-size: 20px
+}
+
+/* Medium screens */
+@media all and (max-width: 1200px) {
+  .mobile {
+    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    justify-content: space-between;
+    justify-content: flex-end;
+  }
+}
+
+/* Small screens */
+@media all and (max-width: 1000px) {
+  .mobile {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
