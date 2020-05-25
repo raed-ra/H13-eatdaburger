@@ -1,6 +1,6 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
-const ConnectionString = require('connection-string');
+const {ConnectionString} = require('connection-string');
 
 let dbConnection
 if (process.env.CLEARDB_DATABASE_URL) {
