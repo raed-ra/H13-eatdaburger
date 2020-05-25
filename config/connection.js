@@ -14,7 +14,8 @@ if (process.env.CLEARDB_DATABASE_URL) {
     database: "burger_db"
   }
 }
-
+console.log(process.env.CLEARDB_DATABASE_URL);
+console.log(dbConnection);
 var connection = mysql.createConnection(dbConnection);
 
 // Make connection.
