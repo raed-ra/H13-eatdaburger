@@ -3,8 +3,10 @@ var mysql = require("mysql");
 const {ConnectionString} = require('connection-string');
 
 let dbConnection
+
 if (process.env.CLEARDB_DATABASE_URL) {
    dbConnection = new ConnectionString(process.env.CLEARDB_DATABASE_URL);
+   dbConnection.host = dbConnection.hosts[0].name
 } else {
     dbConnection = {
     host: "localhost",
