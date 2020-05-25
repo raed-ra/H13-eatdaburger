@@ -4,18 +4,17 @@ const {ConnectionString} = require('connection-string');
 
 let dbConnection
 
-if (process.env.CLEARDB_DATABASE_URL) {
-   dbConnection = new ConnectionString(process.env.CLEARDB_DATABASE_URL);
-   dbConnection.host = dbConnection.hosts[0].name
+if (process.env.JAWSDB_URL) {
+   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-    dbConnection = {
+    connection = mysql.createConnection({ 
     host: "localhost",
     port: 3306,
     user: "root",
     password: "inkehnashod",
     database: "burger_db"
-  }
-}
+  });
+};
 console.log(process.env.CLEARDB_DATABASE_URL);
 console.log(dbConnection);
 var connection = mysql.createConnection(dbConnection);
